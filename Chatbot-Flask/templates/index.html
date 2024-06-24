@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Chatbot</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chatbox {
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-log {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-log .message {
+            display: flex;
+            margin: 10px 0;
+        }
+
+        .chat-log .message .text {
+            padding: 10px;
+            border-radius: 20px;
+            max-width: 80%;
+        }
+
+        .chat-log .message.user-question {
+            justify-content: flex-end;
+        }
+
+        .chat-log .message.user-question .text {
+            background-color: #73374B;
+            color: white;
+        }
+
+        .chat-log .message.bot-response {
+            justify-content: flex-start;
+        }
+
+        .chat-log .message.bot-response .text {
+            background-color: #e8745b;
+            color: white;
+        }
+
+        .welcome-message {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu-button {
+            background-color: #73374B;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .menu-button:hover {
+            background-color: #8f475f;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                margin-top: 70%;
+                margin-left: 5%;
+            }
+        }
+
+        .menu-header {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-item {
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .menu-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .back-button {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #73374B;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-button:hover {
+            background-color: #8f475f;
+        }
+
+        .back-button svg {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="chatbox">
+            <div class="welcome-message">¡Bienvenido al chatbot de Mi Ruta!</div>
+            <div class="chat-log" id="chat-log"></div>
+            <button class="menu-button" onclick="toggleMenu()">Menú</button>
+        </div>
+    </div>
+
+    <div class="menu-overlay" id="menu-overlay">
+        <div class="menu">
+            <div class="menu-header">
+                <strong>Categorías</strong>
+                <div class="back-button" onclick="cargarCategorias()">
+                    <img src="/static/images/arrow-return-left.svg" width="16" height="16" alt="White">
+                </div>
+            </div>
+            <div id="menu-items"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/jquery-3.5.1.min.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            cargarCategorias();
+        });
+
+        function toggleMenu() {
+            $('#menu-overlay').toggle();
+        }
+
+        function cargarCategorias() {
+                $.getJSON('/categorias', function (data) {
+                    $('#menu-items').empty();
+                    $.each(data, function (index, value) {
+                        // Construir el contenido del menú
+                        var menuItem = $('<div class="menu-item"></div>');
+                        var svgPath = '/static/images/star-fill.svg';  // Ruta al SVG externo
+                        $.get(svgPath, function (svgContent) {
+                            var svgElement = $(svgContent).find('svg');  // Obtener el elemento SVG
+                            menuItem.append(svgElement);  // Agregar el SVG al elemento del menú
+                            menuItem.append(' ' + value);  // Agregar el texto después del SVG
+                            menuItem.on('click', function () {
+                                cargarPreguntas(value);  // Llamar a cargarPreguntas con el valor
+                            });
+                            $('#menu-items').append(menuItem);  // Agregar el elemento del menú al contenedor
+                        });
+                    });
+                });
+            }
+
+        function cargarPreguntas(categoria) {
+            $.getJSON('/preguntas/' + categoria, function (data) {
+                $('#menu-items').empty();
+                $.each(data, function (index, value) {
+                    $('#menu-items').append('<div class="menu-item" onclick="mostrarPregunta(\'' + value + '\')">' + value + '</div>');
+                });
+            });
+        }
+
+        function mostrarPregunta(pregunta) {
+            $('#chat-log').append('<div class="message user-question"><div class="text">' + pregunta + '</div></div>');
+            $.getJSON('/respuesta/' + pregunta, function (data) {
+                $('#chat-log').append('<div class="message bot-response"><div class="text">' + data + '</div></div>');
+                $('#chat-log').scrollTop($('#chat-log')[0].scrollHeight);
+                $('#menu-overlay').hide();
+                cargarCategorias();
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Mi Ruta</string>
+    <string name="user_name">Nombre</string>
+    <string name="user">Correo</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Mi Ruta</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="signup">Registro</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="login_button">Inicia</string>
+    <string name="signup_button">Registrar</string>
+    <string name="login_signup">¿Aún no tienes cuenta?, Registrate.</string>
+    <string name="signup_login">¿Ya tienes cuenta?, Inicia sesión.</string>
+
+    <string name="home_text">
+        Estamos emocionados de acompañarte en tus viajes diarios. Aquí podrás descubrir las mejores rutas de transporte público hasta tu destino, calcular tiempo de viaje y mucho más. Todo desde la palma de tu mano.\n\n
+        Gracias por confiar en “Mi Ruta” para hacer tus desplazamientos más simples y eficientes. ¡Disfruta tu viaje!
+    </string>
+
+    <string name="about_tittle">
+        Un poco sobre nosotros...
+    </string>
+
+    <string name="about_nosotros">
+        Nosotros somos más que un equipo; somos visionarios comprometidos con transformar la experiencia del transporte público en tu ciudad. En "Mi Ruta", nuestra misión es hacer que tus desplazamientos sean más accesibles, confiables y convenientes. Creemos fervientemente en una movilidad urbana inteligente que promueva una vida más sostenible y conectada para todos.\n
+    </string>
+
+    <string name="about_vision">
+        Nos esforzamos por ser la herramienta de planificación de viajes más confiable y utilizada, facilitando una experiencia de transporte fluida y menos estresante. Nos comprometemos a expandirnos a más ciudades y a convertirnos en un elemento fundamental en la transformación hacia sistemas de transporte inteligentes y sostenibles en todo el mundo.\n
+    </string>
+
+    <string name="about_mision">
+        Nuestro propósito es proporcionarte información precisa y actualizada para que puedas confiar en nosotros en tus desplazamientos diarios. Nos esforzamos por ser una guía confiable en tu viaje hacia una ciudad más sostenible y conectada.\n
+    </string>
+
+    <string name="about_valores">
+        Innovación: Nos impulsamos constantemente a buscar nuevas formas de mejorar tu experiencia de viaje.\n
+        Confiabilidad: Te ofrecemos información precisa y actualizada para que puedas confiar en nosotros en cada viaje que emprendas.\n
+        Sostenibilidad: Promovemos el uso del transporte público como parte de nuestro compromiso con un futuro más verde y menos congestionado.\n
+        Accesibilidad: Diseñamos "Mi Ruta" para que sea fácil de usar para todos, eliminando las barreras que dificultan el uso eficiente del transporte público.\n\n
+
+        En "Mi Ruta", no solo te ayudamos a llegar a tu destino; te acompañamos en el viaje hacia un futuro de movilidad urbana más inteligente, sostenible y accesible. ¡Únete a nosotros y haz que cada viaje cuente!\n
+    </string>
+
+
+    <string name="login_nombre">Por favor, ingresa tu nombre:</string>
+    <string name="login_correo">Por favor, ingresa tu correo y contraseña:</string>
+    <string name="login_foto">Personaliza tu perfil:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <string name="google_maps_key">AIzaSyCdeJAXAaXpz4WpsbQF3eHZ3-f9ShsFZGc</string>
+
+    <string name="message">Message</string>
+
+
+</resources>

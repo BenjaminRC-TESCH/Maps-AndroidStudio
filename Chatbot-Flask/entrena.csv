@@ -1,0 +1,20 @@
+﻿Pregunta,Respuesta,Categoria
+Hola,"Hola, soy Ralphi, pero Rodolfo, para los cuates, ¿en qué te puedo ayudar?",Inicio
+Horario - Ruta 32,La ruta 32 está disponible de 5 de la mañana a 11 de la noche,Horario
+Horario - Ruta 36,La ruta 36 está disponible de 6 de la mañana a 9 de la noche,Horario
+Destinos disponibles de la ruta 32,"La ruta 32 pasa por el llano, San Martín Cuautlapan, Santa María e Iturbide",Destinos
+Destinos disponibles de la ruta 36,Por el momento solo se encuentra disponible la ruta hacia la loma,Destinos
+Muestrame la ruta a la loma,ruta1,Mapa
+Muestrame la ruta a san martin cuautlalpan,ruta2,Mapa
+Muestrame la ruta a santa maria,ruta3,Mapa
+Muestrame la ruta a iturbide,ruta4,Mapa
+Muestrame la ruta a el llano,ruta5,Mapa
+¿Cuánto cuesta el pasaje?,El pasaje cuesta $12 por persona,Cuotas
+¿Hay descuentos para estudiantes?,"Sí, hay un descuento del 10 porciento para estudiantes con credencial vigente",Cuotas
+¿Cuánto tarda la ruta 36 en llegar a la loma?,La ruta 36 tarda aproximadamente 40 minutos en llegar a La loma,Tiempo
+¿Cuánto tarda la ruta 32 en llegar a san martin cuautlalpan?,La ruta 32 tarda aproximadamente 35 minutos en llegar a San Martín Cuautlalpan,Tiempo
+¿Cuánto tarda la ruta 32 en llegar a santa maria?,La ruta 32 tarda aproximadamente 55 minutos en llegar a Santa María,Tiempo
+¿Cuánto tarda la ruta 32 en llegar a iIturbide?,La ruta 32 tarda aproximadamente 50 minutos en llegar a Iturbide,Tiempo
+¿Cuánto tarda la ruta 32 en llegar a el llano?,La ruta 32 tarda aproximadamente 40 minutos en llegar a El llano,Tiempo
+¿Las rutas operan los fines de semana?,"Sí, todas las rutas operan los fines de semana con el mismo horario",Disponibilidad
+¿Cómo se paga el transporte?,"Al abordar al transporte, se paga la cuota",Cuotas

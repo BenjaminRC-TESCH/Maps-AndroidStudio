@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:bottom="2dp"> <!-- Cambia el valor de la anchura del borde inferior según tus preferencias -->
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <item android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <item android:bottom="1dp" android:left="1dp" android:right="1dp"> <!-- Define solo el borde inferior -->
+        <shape android:shape="rectangle">
+            <solid android:color="@color/lavender" /> <!-- Cambia @color/your_border_color al color deseado -->
+        </shape>
+    </item>
+</layer-list>
